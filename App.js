@@ -16,7 +16,7 @@ const Tab = createMaterialBottomTabNavigator();
 function MyTabs() {
   return (
     <Tab.Navigator
-      initialRouteName="Home"
+      initialRouteName="Itinerarios"
       activeColor="#B0DADA"
       labelStyle={{ fontSize: 12 }}
       barStyle={styles.bottomNav}
