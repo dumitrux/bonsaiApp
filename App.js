@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import colors from './assets/colors/colors';
@@ -11,15 +11,20 @@ import Hitos from './screens/Hitos';
 import Itinerarios from './screens/Itinerarios';
 
 
-const Tab = createMaterialBottomTabNavigator();
+const Tab = createBottomTabNavigator();
 
 function MyTabs() {
   return (
     <Tab.Navigator
-      initialRouteName="Itinerarios"
-      activeColor="#B0DADA"
+      initialRouteName="HomeItinerarios"
+      tabBarOptions={{
+        //activeTintColor: '#e91e63',
+        //inactiveBackgroundColor: '#B0DADA',
+        activeBackgroundColor: '#FFFFFF',
+        tabStyle: styles.bottomNav,
+      }}
       labelStyle={{ fontSize: 12 }}
-      barStyle={styles.bottomNav}
+
     >
       <Tab.Screen
         name="Home"

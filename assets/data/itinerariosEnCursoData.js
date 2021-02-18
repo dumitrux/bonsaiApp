@@ -1,4 +1,4 @@
-const itinerariosData = [
+const itinerariosEnCursoData = [
     {
         id: '1',
         name: 'Autoestima',
@@ -11,14 +11,13 @@ const itinerariosData = [
     },
     {
         id: '3',
-        name: 'Itinerario 3',
+        name: 'Autoestima 2',
         image: require('../images/itinerarios/iter-1.png'),
     },
     {
         id: '4',
-        name: 'Itinerario 4',
+        name: 'Ansiedad social 2',
         image: require('../images/itinerarios/iter-2.png'),
     },
 ]
-
-export default itinerariosData;
+export default itinerariosEnCursoData;

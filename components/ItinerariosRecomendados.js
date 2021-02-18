@@ -6,12 +6,15 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import colors from '../assets/colors/colors';
 
 
-const ItinerariosEnCurso = ({ item }) => {
+const ItinerariosRecomendados = ({ item }) => {
     return (
         <View style={styles.wrapper}>
             <View style={styles.container} >
                 <Image source={item.image} style={styles.image} />
                 <Text style={styles.text}>{item.name}</Text>
+                <View >
+                    <Text>Empezar</Text>
+                </View>
             </View>
         </View>
     );
@@ -27,6 +30,14 @@ const styles = StyleSheet.create({
         width: 150,
         height: 140,
         marginVertical: 10,
+        shadowColor: '#000000',
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
+        shadowOpacity: 0.05,
+        shadowRadius: 10,
+        elevation: 2
     },
     image: {
         width: 40,
@@ -42,4 +53,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default ItinerariosEnCurso;
+export default ItinerariosRecomendados;
