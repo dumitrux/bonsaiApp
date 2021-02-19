@@ -12,7 +12,6 @@ const Itinerario = () => {
         <ScrollView
             contentInsetAdjustmentBehavior="automatic"
             showsVerticalScrollIndicator={false}>
-            <Header />
             <View style={styles.wrapper}>
                 <Text style={styles.text}>EN CURSO</Text>
                 <Text style={styles.text}>RECOMENDADOS</Text>

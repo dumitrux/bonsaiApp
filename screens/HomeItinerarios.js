@@ -8,8 +8,11 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import colors from '../assets/colors/colors';
 import itinerariosEnCursoData from '../assets/data/itinerariosEnCursoData';
 import itinerariosRecomendadosData from '../assets/data/itinerariosRecomendadosData';
+import itinerariosCategoriasData from '../assets/data/itinerariosCategoriasData';
+
 import ItinerariosEnCurso from '../components/ItinerariosEnCurso';
 import ItinerariosRecomendados from '../components/ItinerariosRecomendados';
+import CategoriasItinerarios from '../components/CategoriasItinerarios';
 import Header from '../components/Header';
 
 const HomeItinerarios = ({ navigation }) => {
@@ -17,7 +20,6 @@ const HomeItinerarios = ({ navigation }) => {
         <ScrollView
             contentInsetAdjustmentBehavior="automatic"
             showsVerticalScrollIndicator={false}>
-            <Header />
             <View style={styles.wrapper}>
                 <Text style={styles.text}>EN CURSO</Text>
                 <View style={styles.enCursoList}>
@@ -45,7 +47,15 @@ const HomeItinerarios = ({ navigation }) => {
                     }}>
                     <Text style={styles.text}>POR CATEGORIAS</Text>
                 </TouchableOpacity>
-                <View></View>
+                <View style={styles.categoriesList}>
+                    <FlatList
+                        data={itinerariosCategoriasData}
+                        renderItem={CategoriasItinerarios}
+                        keyExtractor={item => item.id}
+                        horizontal={true}
+                        showsHorizontalScrollIndicator={false}
+                    />
+                </View>
             </View >
         </ScrollView>
     );
@@ -54,26 +64,29 @@ const HomeItinerarios = ({ navigation }) => {
 const styles = StyleSheet.create({
     wrapper: {
         justifyContent: 'center',
-        marginVertical: 10,
-        marginLeft: 10,
+        marginHorizontal: 10,
+        marginTop: 15,
     },
     enCursoList: {
         backgroundColor: '#4B75B1',
         marginTop: 10,
         marginBottom: 35,
         borderRadius: 5,
-        borderBottomLeftRadius: 20,
-        borderTopLeftRadius: 20,
         borderWidth: 5,
         borderColor: '#4B75B1',
     },
     recomendadosList: {
-        marginTop: 10,
-        marginBottom: 15,
+        marginTop: 5,
+        marginBottom: 10,
+    },
+    categoriesList: {
+        marginTop: 5,
+        marginBottom: 10,
     },
     text: {
         fontFamily: 'Nunito-Bold',
         color: colors.TextDark,
+        marginLeft: 15,
     }
 });
 

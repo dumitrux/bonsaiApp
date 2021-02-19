@@ -6,12 +6,12 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import colors from '../assets/colors/colors';
 
 
-const ItinerariosEnCurso = ({ item }) => {
+const CategoriasItinerarios = ({ item }) => {
     return (
         <View style={styles.wrapper}>
             <View style={styles.container} >
-                <Image source={item.image} style={styles.image} />
-                <Text style={styles.text}>{item.name}</Text>
+                <MaterialIcons name={item.icon} color={color = '#4B75B1'} size={26} />
+                <Text style={styles.name}>{item.name}</Text>
             </View>
         </View>
     );
@@ -21,11 +21,13 @@ const styles = StyleSheet.create({
     wrapper: {
     },
     container: {
+        flexDirection: 'row',
+        justifyContent: 'space-around',
         backgroundColor: 'white',
         marginHorizontal: 5,
         borderRadius: 5,
-        width: 150,
-        height: 140,
+        width: 140,
+        height: 50,
         marginVertical: 10,
 
         shadowColor: "#000",
@@ -36,19 +38,13 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.25,
         shadowRadius: 3.84,
         elevation: 5,
-    },
-    image: {
-        width: 40,
-        height: 45,
-        alignSelf: 'center',
-        marginTop: 10,
+        alignItems: 'center',
     },
     text: {
         fontFamily: 'Nunito-SemiBold',
         fontSize: 16,
         color: '#4B75B1',
-        textAlign: 'center',
     },
 });
 
-export default ItinerariosEnCurso;
+export default CategoriasItinerarios;

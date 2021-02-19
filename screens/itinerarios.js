@@ -19,8 +19,16 @@ const ItinerariosStack = createStackNavigator();
 const Itinerarios = () => {
     return (
         <ItinerariosStack.Navigator initialRouteName="HomeItinerarios">
-            <ItinerariosStack.Screen name="HomeItinerarios" component={HomeItinerarios} />
-            <ItinerariosStack.Screen name="Itinerario" component={Itinerario} />
+            <ItinerariosStack.Screen
+                name="HomeItinerarios"
+                component={HomeItinerarios}
+                options={{ headerTitle: props => <Header /> }}
+            />
+            <ItinerariosStack.Screen
+                name="Itinerario"
+                component={Itinerario}
+                options={{ headerTitle: props => <Header /> }}
+            />
         </ItinerariosStack.Navigator>
     );
 };

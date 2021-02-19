@@ -16,14 +16,14 @@ const Tab = createBottomTabNavigator();
 function MyTabs() {
   return (
     <Tab.Navigator
-      initialRouteName="HomeItinerarios"
+      initialRouteName="Itinerarios"
       tabBarOptions={{
-        //activeTintColor: '#e91e63',
-        //inactiveBackgroundColor: '#B0DADA',
-        activeBackgroundColor: '#FFFFFF',
-        tabStyle: styles.bottomNav,
+        inactiveBackgroundColor: colors.ColorPrincipal,
+        activeBackgroundColor: '#6FBBBB',
+        activeTintColor: '#FFFFFF',
+        inactiveTintColor: '#FFFFFF',
       }}
-      labelStyle={{ fontSize: 12 }}
+      labelStyle={{ fontSize: 22 }}
 
     >
       <Tab.Screen
