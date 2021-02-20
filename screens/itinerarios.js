@@ -27,7 +27,18 @@ const Itinerarios = () => {
             <ItinerariosStack.Screen
                 name="Itinerario"
                 component={Itinerario}
-                options={{ headerTitle: props => <Header /> }}
+                options={{
+                    headerTitleAlign: 'center',
+                    headerStyle: {
+                        backgroundColor: '#F8FBFF'
+                    },
+                    headerTintColor: '#fff',
+                    headerTitleStyle: {
+                        fontWeight: 'bold',
+                        color: colors.AccentLight,
+                    },
+                    headerBackImage: () => (<MaterialIcons name="arrow-back-ios" color={color} size={26} />),
+                }}
             />
         </ItinerariosStack.Navigator>
     );

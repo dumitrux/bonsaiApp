@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Text, View, StyleSheet, Image, SafeAreaView, TouchableOpacity } from 'react-native';
+import { Text, View, StyleSheet, Image, SafeAreaView, TouchableHighlight } from 'react-native';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import colors from '../assets/colors/colors';
 import { useNavigation } from '@react-navigation/native';
@@ -7,6 +7,7 @@ import { useNavigation } from '@react-navigation/native';
 
 const ItinerariosRecomendados = ({ item }) => {
     //const navigation = useNavigation();
+    console.log(this.image);
 
     return (
         <View style={styles.wrapper}>
@@ -14,17 +15,20 @@ const ItinerariosRecomendados = ({ item }) => {
                 <Image source={item.image} style={styles.image} />
                 <Text style={styles.textTitulo}>{item.name}</Text>
                 <View style={styles.wrapperBtnEmpezar}>
-                    <View style={styles.btnEmpezar}>
-                        <Text styles={styles.textEmpezar}>Empezar</Text>
-                    </View>
+                    <TouchableHighlight
+                        activeOpacity={0.6}
+                        underlayColor="#1DB6B6"
+                        style={styles.styleOnPress}
+                        onPress={() => {
+                            console.log("PRESS");
+                            //console.log(navigation);
+                            //navigation.navigate('Itinerario')
+                        }}>
+                        <View style={styles.btnEmpezar}>
+                            <Text style={styles.textEmpezar}>Empezar</Text>
+                        </View>
+                    </TouchableHighlight >
                 </View>
-                {/* <TouchableOpacity
-                    onPress={() => {
-                        //console.log(navigation);
-                        //navigation.navigate('Itinerario')
-                    }}>
-                    <Text style={styles.text}>POR CATEGORIAS</Text>
-                </TouchableOpacity> */}
             </View>
         </View>
     );
@@ -39,7 +43,7 @@ const styles = StyleSheet.create({
         marginRight: 5,
         marginLeft: 5,
         borderRadius: 5,
-        width: 150,
+        width: 180,
         height: 140,
         marginVertical: 10,
         elevation: 2,
@@ -85,13 +89,15 @@ const styles = StyleSheet.create({
         elevation: 5,
     },
     textEmpezar: {
-        textDecorationColor: '#1DB6B6',
         color: '#1DB6B6',
     },
     wrapperBtnEmpezar: {
         alignItems: 'center',
         justifyContent: 'center',
         marginBottom: -9,
+    },
+    styleOnPress: {
+        borderRadius: 15,
     }
 });
 

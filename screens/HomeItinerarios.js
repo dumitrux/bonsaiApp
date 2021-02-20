@@ -1,9 +1,10 @@
 import * as React from 'react';
 import 'react-native-gesture-handler';
-import { Text, View, StyleSheet, FlatList, ScrollView, TouchableOpacity } from 'react-native';
+import { Text, View, StyleSheet, FlatList, ScrollView, TouchableOpacity, Image, TouchableHighlight } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+
 
 import colors from '../assets/colors/colors';
 import itinerariosEnCursoData from '../assets/data/itinerariosEnCursoData';
@@ -16,6 +17,29 @@ import CategoriasItinerarios from '../components/CategoriasItinerarios';
 import Header from '../components/Header';
 
 const HomeItinerarios = ({ navigation }) => {
+    let renderRecommended = ({ item }) => (
+        <View style={styles.wrapperRecommended}>
+            <View style={styles.boxRecommended} >
+                <Image source={item.image} style={styles.imageRecommended} />
+                <Text style={styles.textRecommended}>{item.name}</Text>
+                <View style={styles.wrapperBtnRecommended}>
+                    <TouchableHighlight
+                        activeOpacity={0.6}
+                        underlayColor="#1DB6B6"
+                        style={styles.onPressRecommended}
+                        onPress={() => {
+                            console.log("PRESS");
+                            navigation.navigate('Itinerario', item)
+                        }}>
+                        <View style={styles.btnRecommended}>
+                            <Text style={styles.empezarRecommended}>Empezar</Text>
+                        </View>
+                    </TouchableHighlight >
+                </View>
+            </View>
+        </View>
+    );
+
     return (
         <ScrollView
             contentInsetAdjustmentBehavior="automatic"
@@ -35,7 +59,7 @@ const HomeItinerarios = ({ navigation }) => {
                 <View style={styles.recomendadosList}>
                     <FlatList
                         data={itinerariosRecomendadosData}
-                        renderItem={ItinerariosRecomendados}
+                        renderItem={renderRecommended}
                         keyExtractor={item => item.id}
                         horizontal={true}
                         showsHorizontalScrollIndicator={false}
@@ -87,7 +111,72 @@ const styles = StyleSheet.create({
         fontFamily: 'Nunito-Bold',
         color: colors.TextDark,
         marginLeft: 15,
+    },
+    wrapperRecommended: {
+        height: 180,
+    },
+    boxRecommended: {
+        backgroundColor: 'white',
+        marginRight: 5,
+        marginLeft: 5,
+        borderRadius: 5,
+        width: 180,
+        height: 140,
+        marginVertical: 10,
+        elevation: 2,
+        flexDirection: 'column',
+
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 4,
+        },
+        shadowOpacity: 0.32,
+        shadowRadius: 5.46,
+        elevation: 9,
+    },
+    imageRecommended: {
+        width: 40,
+        height: 45,
+        alignSelf: 'center',
+        marginTop: 10,
+    },
+    textRecommended: {
+        fontFamily: 'Nunito-SemiBold',
+        fontSize: 16,
+        color: '#4B75B1',
+        textAlign: 'center',
+        flexGrow: 1,
+    },
+    wrapperBtnRecommended: {
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginBottom: -9,
+    },
+    btnRecommended: {
+        borderRadius: 15,
+        backgroundColor: colors.Background,
+        width: 95,
+        height: 40,
+        alignItems: 'center',
+        justifyContent: 'center',
+
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+        elevation: 5,
+    },
+    empezarRecommended: {
+        color: '#1DB6B6',
+    },
+    onPressRecommended: {
+        borderRadius: 15,
     }
+
 });
 
 export default HomeItinerarios;
