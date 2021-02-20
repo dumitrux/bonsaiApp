@@ -12,7 +12,6 @@ import itinerariosRecomendadosData from '../assets/data/itinerariosRecomendadosD
 import itinerariosCategoriasData from '../assets/data/itinerariosCategoriasData';
 
 import ItinerariosEnCurso from '../components/ItinerariosEnCurso';
-import ItinerariosRecomendados from '../components/ItinerariosRecomendados';
 import CategoriasItinerarios from '../components/CategoriasItinerarios';
 import Header from '../components/Header';
 
@@ -28,7 +27,6 @@ const HomeItinerarios = ({ navigation }) => {
                         underlayColor="#1DB6B6"
                         style={styles.onPressRecommended}
                         onPress={() => {
-                            console.log("PRESS");
                             navigation.navigate('Itinerario', item)
                         }}>
                         <View style={styles.btnRecommended}>

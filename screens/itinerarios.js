@@ -8,7 +8,6 @@ import colors from '../assets/colors/colors';
 import itinerariosEnCursoData from '../assets/data/itinerariosEnCursoData';
 import itinerariosRecomendadosData from '../assets/data/itinerariosRecomendadosData';
 import ItinerariosEnCurso from '../components/ItinerariosEnCurso';
-import ItinerariosRecomendados from '../components/ItinerariosRecomendados';
 import Header from '../components/Header';
 import HomeItinerarios from './HomeItinerarios';
 import Itinerario from './Itinerario';

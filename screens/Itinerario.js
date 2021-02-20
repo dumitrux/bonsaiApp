@@ -7,7 +7,10 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import colors from '../assets/colors/colors';
 import Header from '../components/Header';
 
-const Itinerario = () => {
+const Itinerario = ({ route }) => {
+    //console.log(route);
+    const item = route.params;
+    console.log(item);
     return (
         <ScrollView
             contentInsetAdjustmentBehavior="automatic"
