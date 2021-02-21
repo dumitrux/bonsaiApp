@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import { Text, View, StyleSheet, Dimensions } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
@@ -14,6 +14,15 @@ import Itinerarios from './screens/Itinerarios';
 const Tab = createBottomTabNavigator();
 
 function MyTabs() {
+  // const windowWidth = Dimensions.get('window').width;
+  // const windowHeight = Dimensions.get('window').height;
+  // console.log(windowWidth, windowHeight);
+
+  // const windowWidth2 = Dimensions.get('screen').width;
+  // const windowHeight2 = Dimensions.get('screen').height;
+  // console.log(windowWidth2, windowHeight2);
+
+
   return (
     <Tab.Navigator
       initialRouteName="Itinerarios"

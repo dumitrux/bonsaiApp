@@ -1,11 +1,7 @@
 import * as React from 'react';
 import { Text, View, StyleSheet, FlatList, ScrollView } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
-import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
 import colors from '../assets/colors/colors';
-import Header from '../components/Header';
 
 const Itinerario = ({ route }) => {
     //console.log(route);
