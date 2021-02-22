@@ -1,12 +1,13 @@
 import * as React from 'react';
 import { Text, View, StyleSheet, FlatList, ScrollView } from 'react-native';
+import { createStackNavigator } from '@react-navigation/stack';
+import HeaderDrawer from '../components/HeaderDrawer';
 
 import colors from '../assets/colors/colors';
 
-const Itinerario = ({ route }) => {
-    //console.log(route);
-    const item = route.params;
-    console.log(item);
+const ItinerarioStack = createStackNavigator();
+
+const Itinerario2 = () => {
     return (
         <ScrollView
             contentInsetAdjustmentBehavior="automatic"
@@ -17,6 +18,18 @@ const Itinerario = ({ route }) => {
                 <Text style={styles.text}>POR CATEGORIAS</Text>
             </View >
         </ScrollView>
+    );
+}
+
+const Itinerario = ({ navigation }) => {
+    return (
+        <ItinerarioStack.Navigator initialRouteName="Itinerario2">
+            <ItinerarioStack.Screen
+                name="Itinerario2"
+                component={Itinerario2}
+                options={{ headerTitle: () => <HeaderDrawer navigation={navigation} /> }}
+            />
+        </ItinerarioStack.Navigator>
     );
 }
 

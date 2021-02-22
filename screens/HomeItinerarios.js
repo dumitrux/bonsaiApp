@@ -8,6 +8,7 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import itinerariosEncursoData from '../assets/data/itinerariosEncursoData';
 import itinerariosRecomendadosData from '../assets/data/itinerariosRecomendadosData';
 import itinerariosCategoriasData from '../assets/data/itinerariosCategoriasData';
+import BoxRecomendado from '../components/BoxRecomendado';
 
 const HomeItinerarios = ({ navigation }) => {
     let renderEncurso = ({ item }) => (
@@ -20,30 +21,33 @@ const HomeItinerarios = ({ navigation }) => {
                 <View style={[styles.progressBarLeft, { width: '80%' }]} />
                 <View style={[styles.progressBarRight, { width: '20%' }]} />
             </View>
-        </View>
-    );
+        </View>)
+        ;
 
-    let renderRecomendado = ({ item }) => (
-        <View style={styles.boxRecommended} >
-            <View style={styles.topRecomendados}>
-                <Image source={item.image} style={styles.imageRecommended} />
-                <Text style={styles.textRecomendadosName}>{item.name}</Text>
-            </View>
-            <View style={styles.wrapperBtnRecomendados}>
-                <TouchableHighlight
-                    activeOpacity={0.6}
-                    underlayColor="#1DB6B6"
-                    style={styles.onPressRecomendados}
-                    onPress={() => {
-                        navigation.navigate('Itinerario', item)
-                    }}>
-                    <View style={styles.btnRecomendados}>
-                        <Text style={styles.empezarRecomendados}>Empezar</Text>
-                    </View>
-                </TouchableHighlight >
-            </View>
-        </View>
-    );
+    let renderRecomendado = ({ item }) => {
+        return <BoxRecomendado item={item} navigation={navigation} />
+        // return (
+        //     <View style={styles.boxRecommended} >
+        //         <View style={styles.topRecomendados}>
+        //             <Image source={item.image} style={styles.imageRecommended} />
+        //             <Text style={styles.textRecomendadosName}>{item.name}</Text>
+        //         </View>
+        //         <View style={styles.wrapperBtnRecomendados}>
+        //             <TouchableHighlight
+        //                 activeOpacity={0.6}
+        //                 underlayColor="#1DB6B6"
+        //                 style={styles.onPressRecomendados}
+        //                 onPress={() => {
+        //                     navigation.navigate('Itinerario', item)
+        //                 }}>
+        //                 <View style={styles.btnRecomendados}>
+        //                     <Text style={styles.empezarRecomendados}>Empezar</Text>
+        //                 </View>
+        //             </TouchableHighlight >
+        //         </View>
+        //     </View>
+        // );
+    }
 
     let renderCategoria = ({ item }) => (
         <View style={styles.boxCategoria} >
@@ -75,7 +79,7 @@ const HomeItinerarios = ({ navigation }) => {
                 <View style={styles.recomendadosList}>
                     <FlatList
                         data={itinerariosRecomendadosData}
-                        renderItem={renderRecomendado}
+                        renderItem={({ item }) => (<BoxRecomendado item={item} navigation={navigation} />)}
                         keyExtractor={item => item.id}
                         horizontal={true}
                         showsHorizontalScrollIndicator={false}
