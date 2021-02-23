@@ -16,7 +16,10 @@ const Itinerarios = ({ navigation }) => {
             <ItinerariosStack.Screen
                 name="HomeItinerarios"
                 component={HomeItinerarios}
-                options={{ headerTitle: () => <HeaderDrawer navigation={navigation} /> }}
+                
+                options={{ 
+                    headerShown: false
+                }}
             />
             <ItinerariosStack.Screen
                 name="Itinerario"

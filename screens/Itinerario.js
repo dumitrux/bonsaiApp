@@ -7,7 +7,7 @@ import colors from '../assets/colors/colors';
 
 const ItinerarioStack = createStackNavigator();
 
-const Itinerario2 = () => {
+const Itinerario = () => {
     return (
         <ScrollView
             contentInsetAdjustmentBehavior="automatic"
@@ -18,18 +18,6 @@ const Itinerario2 = () => {
                 <Text style={styles.text}>POR CATEGORIAS</Text>
             </View >
         </ScrollView>
-    );
-}
-
-const Itinerario = ({ navigation }) => {
-    return (
-        <ItinerarioStack.Navigator initialRouteName="Itinerario2">
-            <ItinerarioStack.Screen
-                name="Itinerario2"
-                component={Itinerario2}
-                options={{ headerTitle: () => <HeaderDrawer navigation={navigation} /> }}
-            />
-        </ItinerarioStack.Navigator>
     );
 }
 

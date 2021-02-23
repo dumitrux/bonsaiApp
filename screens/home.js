@@ -4,13 +4,13 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import colors from '../assets/colors/colors';
-import Header from '../components/Header';
+import HeaderDrawer from '../components/HeaderDrawer';
 
 
-const Home = () => {
+const Home = ({ navigation }) => {
     return (
         <View style={styles.main}>
-            <Header />
+            <HeaderDrawer navigation={navigation}/>
             <View style={styles.container}>
                 <Text style={styles.text}>Home</Text>
             </View>
@@ -21,11 +21,11 @@ const Home = () => {
 const styles = StyleSheet.create({
     main: {
         flex: 1,
+        marginHorizontal: 10,
+        marginVertical: 10,
     },
     container: {
         flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
     },
     text: {
         fontFamily: 'Nunito-Bold'

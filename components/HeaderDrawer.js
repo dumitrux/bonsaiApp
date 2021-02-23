@@ -12,7 +12,7 @@ const HeaderDrawer = ({ navigation }) => {
                 >
                     <MaterialIcons name="menu" color={'#79A6EB'} size={26} />
                 </TouchableOpacity>
-                <Image source={require('../assets/images/text-bonsai.jpg')} style={styles.textBonsai} />
+                <Image source={require('../assets/images/text-bonsai.png')} style={styles.textBonsai} />
                 <MaterialIcons name="more-vert" color={'#79A6EB'} size={26} />
             </View>
         </SafeAreaView>

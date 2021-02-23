@@ -18,15 +18,6 @@ import CustomDrawerContent from './components/CustomDrawerContent';
 const Tab = createBottomTabNavigator();
 
 function MyTabs() {
-  // const windowWidth = Dimensions.get('window').width;
-  // const windowHeight = Dimensions.get('window').height;
-  // console.log(windowWidth, windowHeight);
-
-  // const windowWidth2 = Dimensions.get('screen').width;
-  // const windowHeight2 = Dimensions.get('screen').height;
-  // console.log(windowWidth2, windowHeight2);
-
-
   return (
     <Tab.Navigator
       initialRouteName="Itinerarios"
@@ -100,7 +91,25 @@ function MyDrawer() {
           }
         }
       />
-      <Drawer.Screen name="Itinerario" component={Itinerario} />
+      <Drawer.Screen 
+      name="Configuración" 
+      component={Itinerario}
+      options={
+        {
+          drawerIcon: () => (<MaterialIcons name="settings" color={'#79A6EB'} size={26} />)
+        }
+      }
+      />
+      <Drawer.Screen 
+      name="Logout" 
+      component={Itinerario}
+      options={
+        {
+          drawerIcon: () => (<MaterialIcons name="logout" color={'#79A6EB'} size={26} />)
+        }
+      }
+      
+      />
     </Drawer.Navigator>
   );
 }
