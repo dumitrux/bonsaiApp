@@ -1,4 +1,5 @@
 {
   "name": "bonsaiApp",
-  "displayName": "bonsaiApp"
+  "displayName": "bonsaiApp",
+  "orientation": "portrait"
 }

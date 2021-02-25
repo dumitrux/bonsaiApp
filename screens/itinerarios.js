@@ -11,34 +11,24 @@ import { createStackNavigator } from '@react-navigation/stack';
 const ItinerariosStack = createStackNavigator();
 
 const Itinerarios = ({ navigation }) => {
-    return (
-        <ItinerariosStack.Navigator initialRouteName="HomeItinerarios">
-            <ItinerariosStack.Screen
-                name="HomeItinerarios"
-                component={HomeItinerarios}
-                
-                options={{ 
-                    headerShown: false
-                }}
-            />
-            <ItinerariosStack.Screen
-                name="Itinerario"
-                component={Itinerario}
-                options={{
-                    headerTitleAlign: 'center',
-                    headerStyle: {
-                        backgroundColor: '#F8FBFF'
-                    },
-                    headerTintColor: '#fff',
-                    headerTitleStyle: {
-                        fontWeight: 'bold',
-                        color: colors.AccentLight,
-                    },
-                    headerBackImage: () => (<MaterialIcons name="arrow-back-ios" color={color} size={26} />),
-                }}
-            />
-        </ItinerariosStack.Navigator>
-    );
+  return (
+    <ItinerariosStack.Navigator initialRouteName="HomeItinerarios">
+      <ItinerariosStack.Screen
+        name="HomeItinerarios"
+        component={HomeItinerarios}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <ItinerariosStack.Screen
+        name="Itinerario"
+        component={Itinerario}
+        options={{
+          headerShown: false,
+        }}
+      />
+    </ItinerariosStack.Navigator>
+  );
 };
 
-export default Itinerarios; 
+export default Itinerarios;

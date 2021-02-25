@@ -14,7 +14,6 @@ import Itinerarios from './screens/Itinerarios';
 import Itinerario from './screens/Itinerario';
 import CustomDrawerContent from './components/CustomDrawerContent';
 
-
 const Tab = createBottomTabNavigator();
 
 function MyTabs() {
@@ -28,7 +27,6 @@ function MyTabs() {
         inactiveTintColor: '#FFFFFF',
       }}
       labelStyle={{ fontSize: 22 }}
-
     >
       <Tab.Screen
         name="Home"
@@ -66,13 +64,12 @@ function MyTabs() {
 
 const styles = StyleSheet.create({
   bottomNav: {
-    backgroundColor: colors.ColorPrincipal
+    backgroundColor: colors.ColorPrincipal,
   },
   text: {
-    fontFamily: 'Nunito-Bold'
-  }
+    fontFamily: 'Nunito-Bold',
+  },
 });
-
 
 const Drawer = createDrawerNavigator();
 
@@ -80,35 +77,34 @@ function MyDrawer() {
   return (
     <Drawer.Navigator
       initialRouteName="Home"
-      drawerContent={props => <CustomDrawerContent {...props} />}
+      drawerContent={(props) => <CustomDrawerContent {...props} />}
     >
       <Drawer.Screen
         name="Home"
         component={MyTabs}
-        options={
-          {
-            drawerIcon: () => (<MaterialIcons name="home" color={'#79A6EB'} size={26} />)
-          }
-        }
+        options={{
+          drawerIcon: () => (
+            <MaterialIcons name="home" color={'#79A6EB'} size={26} />
+          ),
+        }}
       />
-      <Drawer.Screen 
-      name="Configuración" 
-      component={Itinerario}
-      options={
-        {
-          drawerIcon: () => (<MaterialIcons name="settings" color={'#79A6EB'} size={26} />)
-        }
-      }
+      <Drawer.Screen
+        name="Configuración"
+        component={Itinerario}
+        options={{
+          drawerIcon: () => (
+            <MaterialIcons name="settings" color={'#79A6EB'} size={26} />
+          ),
+        }}
       />
-      <Drawer.Screen 
-      name="Logout" 
-      component={Itinerario}
-      options={
-        {
-          drawerIcon: () => (<MaterialIcons name="logout" color={'#79A6EB'} size={26} />)
-        }
-      }
-      
+      <Drawer.Screen
+        name="Logout"
+        component={Itinerario}
+        options={{
+          drawerIcon: () => (
+            <MaterialIcons name="logout" color={'#79A6EB'} size={26} />
+          ),
+        }}
       />
     </Drawer.Navigator>
   );

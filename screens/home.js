@@ -6,30 +6,29 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import colors from '../assets/colors/colors';
 import HeaderDrawer from '../components/HeaderDrawer';
 
-
 const Home = ({ navigation }) => {
-    return (
-        <View style={styles.main}>
-            <HeaderDrawer navigation={navigation}/>
-            <View style={styles.container}>
-                <Text style={styles.text}>Home</Text>
-            </View>
-        </View>
-    );
-}
+  return (
+    <View style={styles.main}>
+      <HeaderDrawer navigation={navigation} />
+      <View style={styles.container}>
+        <Text style={styles.text}>Home</Text>
+      </View>
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
-    main: {
-        flex: 1,
-        marginHorizontal: 10,
-        marginVertical: 10,
-    },
-    container: {
-        flex: 1,
-    },
-    text: {
-        fontFamily: 'Nunito-Bold'
-    }
+  main: {
+    flex: 1,
+    marginHorizontal: 10,
+    marginVertical: 10,
+  },
+  container: {
+    flex: 1,
+  },
+  text: {
+    fontFamily: 'Nunito-Bold',
+  },
 });
 
 export default Home;
