@@ -1,5 +1,6 @@
 {
   "name": "bonsaiApp",
   "displayName": "bonsaiApp",
-  "orientation": "portrait"
+  "orientation": "portrait",
+  "icon": "./app/assets/images/Logo-framed.png"
 }

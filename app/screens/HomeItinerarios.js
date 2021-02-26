@@ -14,6 +14,7 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
 import itinerariosEncursoData from '../assets/data/itinerariosEncursoData';
 import itinerariosRecomendadosData from '../assets/data/itinerariosRecomendadosData';
+import itinerariosData from '../assets/data/itinerariosData';
 import itinerariosCategoriasData from '../assets/data/itinerariosCategoriasData';
 import BoxEncurso from '../components/BoxEncurso';
 import BoxRecomendado from '../components/BoxRecomendado';
@@ -52,7 +53,7 @@ const HomeItinerarios = ({ navigation }) => {
         <Text style={styles.textRecomendados}>RECOMENDADOS</Text>
         <View style={styles.recomendadosList}>
           <FlatList
-            data={itinerariosRecomendadosData}
+            data={itinerariosData}
             renderItem={({ item }) => (
               <BoxRecomendado item={item} navigation={navigation} />
             )}

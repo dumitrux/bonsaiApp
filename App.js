@@ -5,14 +5,14 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-import colors from './assets/colors/colors';
+import colors from './app//assets/colors/colors';
 
-import Home from './screens/Home';
-import Hitos from './screens/Hitos';
-import Itinerarios from './screens/Itinerarios';
+import Home from './app/screens/Home';
+import Hitos from './app//screens/Hitos';
+import Itinerarios from './app//screens/Itinerarios';
 
-import Itinerario from './screens/Itinerario';
-import CustomDrawerContent from './components/CustomDrawerContent';
+import Itinerario from './app//screens/Itinerario';
+import CustomDrawerContent from './app//components/CustomDrawerContent';
 
 const Tab = createBottomTabNavigator();
 
