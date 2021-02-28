@@ -17,38 +17,10 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 const ItinerarioStack = createStackNavigator();
 const windowHeight = Dimensions.get('window').height;
 
-const Itinerario = ({ route, navigation }) => {
-  let itinerario = route.params.item;
-
-  let renderItemList = ({ item }) => (
-    <TouchableOpacity
-      activeOpacity={0.5}
-      style={styles.itemList}
-      onPress={() => {
-        navigation.navigate('ItinerarioContent', {
-          ...item,
-          name: itinerario.name,
-        });
-      }}
-    >
-      {item.id % 2 == 0 ? (
-        <MaterialIcons
-          name="radio-button-unchecked"
-          style={styles.iconItem}
-          color={color}
-          size={26}
-        />
-      ) : (
-        <MaterialIcons
-          name="check-circle"
-          style={styles.iconItem}
-          color={color}
-          size={26}
-        />
-      )}
-      <Text>{item.title}</Text>
-    </TouchableOpacity>
-  );
+const ItinerarioContent = ({ route, navigation }) => {
+  console.log(route.params);
+  let content = route.params;
+  //   console.log(itinerario);
 
   return (
     <View style={styles.main}>
@@ -64,33 +36,23 @@ const Itinerario = ({ route, navigation }) => {
 
       <View style={styles.header}>
         <View style={styles.itinerarioDefinition}>
-          <Image source={itinerario.image} style={styles.image} />
-          <View style={styles.itinerarioText}>
-            <Text style={styles.title}>{itinerario.name}</Text>
-            <Text style={styles.description}>{itinerario.description}</Text>
-          </View>
+          <Text style={styles.title}>{content.name}</Text>
+          {/* <Image source={itinerario.image} style={styles.image} /> */}
         </View>
       </View>
-
-      <TouchableHighlight
-        activeOpacity={0.6}
-        underlayColor="#1DB6B6"
-        style={styles.btnContinue}
-        onPress={() => {
-          console.log('press');
-        }}
-      >
-        <Text style={styles.textBtnConintue}>CONTINUAR</Text>
-      </TouchableHighlight>
-
       <View style={styles.content}>
-        <Text>CONTENIDOS</Text>
-        <FlatList
-          data={itinerario.contents}
-          renderItem={renderItemList}
-          keyExtractor={(itinerario) => itinerario.id}
-          showsHorizontalScrollIndicator={false}
-        />
+        <Text>CONTENIDO</Text>
+        <View style={styles.progressIndicator}></View>
+        <TouchableHighlight
+          activeOpacity={0.6}
+          underlayColor="#1DB6B6"
+          style={styles.btnNext}
+          onPress={() => {
+            // navigation.navigate('ItinerarioContent', { content });
+          }}
+        >
+          <Text style={styles.textBtnConintue}>SIGUIENTE</Text>
+        </TouchableHighlight>
       </View>
     </View>
   );
@@ -132,26 +94,18 @@ const styles = StyleSheet.create({
     height: 80,
     alignSelf: 'center',
   },
-  itinerarioText: {
-    marginTop: 15,
-  },
   title: {
     fontFamily: 'Nunito-Bold',
     color: colors.TextDark,
     fontSize: 26,
     marginBottom: 15,
   },
-  description: {
-    fontFamily: 'Nunito-Bold',
-    color: colors.TextDark,
-  },
-  btnContinue: {
+  btnNext: {
     alignSelf: 'center',
     width: 140,
-    bottom: 20,
     padding: 15,
     borderRadius: 10,
-    backgroundColor: colors.ColorPrincipal,
+    backgroundColor: colors.AccentDark,
 
     shadowColor: '#000',
     shadowOffset: {
@@ -174,12 +128,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 30,
     flex: 2,
   },
-  itemList: {
-    flexDirection: 'row',
-    marginTop: 20,
-  },
-  iconItem: { marginRight: 10 },
-  textItem: {},
+  progressIndicator: {},
 });
 
-export default Itinerario;
+export default ItinerarioContent;

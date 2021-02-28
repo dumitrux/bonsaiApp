@@ -6,6 +6,7 @@ import colors from '../assets/colors/colors';
 import HeaderDrawer from '../components/HeaderDrawer';
 import HomeItinerarios from './HomeItinerarios';
 import Itinerario from './Itinerario';
+import ItinerarioContent from '../components/ItinerarioContent';
 import { createStackNavigator } from '@react-navigation/stack';
 
 const ItinerariosStack = createStackNavigator();
@@ -23,6 +24,13 @@ const Itinerarios = ({ navigation }) => {
       <ItinerariosStack.Screen
         name="Itinerario"
         component={Itinerario}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <ItinerariosStack.Screen
+        name="ItinerarioContent"
+        component={ItinerarioContent}
         options={{
           headerShown: false,
         }}
