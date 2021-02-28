@@ -1,26 +1,34 @@
-import * as React from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import {
   Text,
   View,
   StyleSheet,
-  Image,
   TouchableOpacity,
-  ScrollView,
-  Dimensions,
   TouchableHighlight,
-  FlatList,
 } from 'react-native';
-import { createStackNavigator } from '@react-navigation/stack';
 import colors from '../assets/colors/colors';
+import { createStackNavigator } from '@react-navigation/stack';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
-const ItinerarioStack = createStackNavigator();
-const windowHeight = Dimensions.get('window').height;
+import firestore from '@react-native-firebase/firestore';
 
-const ItinerarioContent = ({ route, navigation }) => {
-  console.log(route.params);
-  let content = route.params;
-  //   console.log(itinerario);
+const Firebase = ({ navigation }) => {
+  // const [itinerary, setItinerary] = useState(0);
+
+  // const fetchItinerary = useCallback(async () => {
+  //   const itineraryDocument = await firestore()
+  //     .collection('itineraries')
+  //     .doc('jtESvbq3sycnM8hBDYM2')
+  //     .get();
+
+  //   console.log(itineraryDocument);
+  //   console.log(itineraryDocument._data);
+  //   setItinerary(itineraryDocument);
+  // }, []);
+
+  // useEffect(() => {
+  //   fetchItinerary();
+  // }, []);
 
   return (
     <View style={styles.main}>
@@ -28,6 +36,7 @@ const ItinerarioContent = ({ route, navigation }) => {
         activeOpacity={0.5}
         style={styles.btnBack}
         onPress={() => {
+          console.log('goBack');
           navigation.goBack();
         }}
       >
@@ -36,23 +45,26 @@ const ItinerarioContent = ({ route, navigation }) => {
 
       <View style={styles.header}>
         <View style={styles.itinerarioDefinition}>
-          <Text style={styles.title}>{content.name}</Text>
-          {/* <Image source={itinerario.image} style={styles.image} /> */}
+          <View style={styles.itinerarioText}>
+            <Text style={styles.title}>TITLE</Text>
+            <Text style={styles.description}>Description</Text>
+          </View>
         </View>
       </View>
+
+      <TouchableHighlight
+        activeOpacity={0.6}
+        underlayColor="#1DB6B6"
+        style={styles.btnContinue}
+        onPress={() => {
+          navigation.goBack();
+        }}
+      >
+        <Text style={styles.textBtnConintue}>BACK</Text>
+      </TouchableHighlight>
+
       <View style={styles.content}>
-        <Text>CONTENIDO</Text>
-        <View style={styles.progressIndicator}></View>
-        <TouchableHighlight
-          activeOpacity={0.6}
-          underlayColor="#1DB6B6"
-          style={styles.btnNext}
-          onPress={() => {
-            // navigation.navigate('ItinerarioContent', { content });
-          }}
-        >
-          <Text style={styles.textBtnConintue}>SIGUIENTE</Text>
-        </TouchableHighlight>
+        <Text>CONTENT</Text>
       </View>
     </View>
   );
@@ -66,7 +78,7 @@ const styles = StyleSheet.create({
     marginTop: 20,
     position: 'absolute',
     zIndex: 1,
-    elevation: 50,
+    elevation: 90,
   },
   main: {
     flex: 1,
@@ -94,18 +106,26 @@ const styles = StyleSheet.create({
     height: 80,
     alignSelf: 'center',
   },
+  itinerarioText: {
+    marginTop: 15,
+  },
   title: {
     fontFamily: 'Nunito-Bold',
     color: colors.TextDark,
     fontSize: 26,
     marginBottom: 15,
   },
-  btnNext: {
+  description: {
+    fontFamily: 'Nunito-Bold',
+    color: colors.TextDark,
+  },
+  btnContinue: {
     alignSelf: 'center',
     width: 140,
+    bottom: 20,
     padding: 15,
     borderRadius: 10,
-    backgroundColor: colors.AccentDark,
+    backgroundColor: colors.ColorPrincipal,
 
     shadowColor: '#000',
     shadowOffset: {
@@ -128,7 +148,12 @@ const styles = StyleSheet.create({
     marginHorizontal: 30,
     flex: 2,
   },
-  progressIndicator: {},
+  itemList: {
+    flexDirection: 'row',
+    marginTop: 20,
+  },
+  iconItem: { marginRight: 10 },
+  textItem: {},
 });
 
-export default ItinerarioContent;
+export default Firebase;

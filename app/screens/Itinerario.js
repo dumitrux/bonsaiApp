@@ -25,10 +25,7 @@ const Itinerario = ({ route, navigation }) => {
       activeOpacity={0.5}
       style={styles.itemList}
       onPress={() => {
-        navigation.navigate('ItinerarioContent', {
-          ...item,
-          name: itinerario.name,
-        });
+        navigation.navigate('ItinerarioContent', { itinerario });
       }}
     >
       {item.id % 2 == 0 ? (

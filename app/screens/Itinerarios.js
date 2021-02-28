@@ -6,7 +6,7 @@ import colors from '../assets/colors/colors';
 import HeaderDrawer from '../components/HeaderDrawer';
 import HomeItinerarios from './HomeItinerarios';
 import Itinerario from './Itinerario';
-import ItinerarioContent from '../components/ItinerarioContent';
+import ItinerarioContent from './ItinerarioContent';
 import { createStackNavigator } from '@react-navigation/stack';
 
 const ItinerariosStack = createStackNavigator();

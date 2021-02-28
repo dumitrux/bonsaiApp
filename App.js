@@ -11,7 +11,7 @@ import Home from './app/screens/Home';
 import Hitos from './app//screens/Hitos';
 import Itinerarios from './app//screens/Itinerarios';
 
-import Itinerario from './app//screens/Itinerario';
+import Firebase from './app//screens/Firebase';
 import CustomDrawerContent from './app//components/CustomDrawerContent';
 
 const Tab = createBottomTabNavigator();
@@ -90,7 +90,7 @@ function MyDrawer() {
       />
       <Drawer.Screen
         name="Configuración"
-        component={Itinerario}
+        component={Firebase}
         options={{
           drawerIcon: () => (
             <MaterialIcons name="settings" color={'#79A6EB'} size={26} />
@@ -99,7 +99,7 @@ function MyDrawer() {
       />
       <Drawer.Screen
         name="Logout"
-        component={Itinerario}
+        component={Firebase}
         options={{
           drawerIcon: () => (
             <MaterialIcons name="logout" color={'#79A6EB'} size={26} />
