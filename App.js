@@ -11,7 +11,8 @@ import Home from './app/screens/Home';
 import Hitos from './app//screens/Hitos';
 import Itinerarios from './app//screens/Itinerarios';
 
-import Firebase from './app//screens/Firebase';
+import Firebase from './app/screens/Firebase';
+import StorageScreen from './app/screens/StorageScreen';
 import CustomDrawerContent from './app//components/CustomDrawerContent';
 
 const Tab = createBottomTabNavigator();
@@ -99,7 +100,7 @@ function MyDrawer() {
       />
       <Drawer.Screen
         name="Logout"
-        component={Firebase}
+        component={StorageScreen}
         options={{
           drawerIcon: () => (
             <MaterialIcons name="logout" color={'#79A6EB'} size={26} />
