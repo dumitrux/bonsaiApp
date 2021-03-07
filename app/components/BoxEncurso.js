@@ -1,21 +1,34 @@
 import * as React from 'react';
-import { Text, View, StyleSheet, Dimensions, Image } from 'react-native';
+import {
+  Text,
+  View,
+  StyleSheet,
+  Dimensions,
+  Image,
+  TouchableHighlight,
+} from 'react-native';
 
 import colors from '../assets/colors/colors';
 
 const BoxEncurso = ({ item, navigation }) => {
   // console.log(item);
   return (
-    <View style={styles.boxEncurso}>
-      <View style={styles.topEncurso}>
-        <Image source={item.image} style={styles.imageEncurso} />
-        <Text style={styles.textEncursoName}>{item.name}</Text>
+    <TouchableHighlight
+      onPress={() => {
+        navigation.navigate('Itinerario', { item });
+      }}
+    >
+      <View style={styles.boxEncurso}>
+        <View style={styles.topEncurso}>
+          <Image source={item.image} style={styles.imageEncurso} />
+          <Text style={styles.textEncursoName}>{item.name}</Text>
+        </View>
+        <View style={styles.progressBar}>
+          <View style={[styles.progressBarLeft, { width: '80%' }]} />
+          <View style={[styles.progressBarRight, { width: '20%' }]} />
+        </View>
       </View>
-      <View style={styles.progressBar}>
-        <View style={[styles.progressBarLeft, { width: '80%' }]} />
-        <View style={[styles.progressBarRight, { width: '20%' }]} />
-      </View>
-    </View>
+    </TouchableHighlight>
   );
 };
 

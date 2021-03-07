@@ -3,13 +3,11 @@ import {
   Text,
   View,
   StyleSheet,
-  Image,
   TouchableOpacity,
   ScrollView,
   Dimensions,
   TouchableHighlight,
-  FlatList,
-  ColorPropType,
+  ImageBackground,
 } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 import colors from '../assets/colors/colors';
@@ -26,92 +24,154 @@ const ItinerarioContent = ({ route, navigation }) => {
 
   return (
     <View style={styles.main}>
-      <TouchableOpacity
-        activeOpacity={0.5}
-        style={styles.btnBack}
-        onPress={() => {
-          navigation.goBack();
-        }}
+      <ImageBackground
+        source={require('../assets/images/fondo.jpg')}
+        style={styles.imgBack}
+        imageStyle={{ opacity: 0.06 }}
       >
-        <MaterialIcons name="arrow-back-ios" color={color} size={26} />
-      </TouchableOpacity>
+        <TouchableOpacity
+          activeOpacity={0.5}
+          style={styles.btnBack}
+          onPress={() => {
+            navigation.goBack();
+          }}
+        >
+          <MaterialIcons name="arrow-back-ios" color={color} size={26} />
+        </TouchableOpacity>
 
-      <View style={styles.header}>
-        <View style={styles.itinerarioDefinition}>
-          <Text style={styles.title}>{itinerario.name}</Text>
-          {/* <Image source={itinerario.image} style={styles.image} /> */}
+        <View style={styles.header}>
+          <View style={styles.itinerarioDefinition}>
+            <Text style={styles.title}>{itinerario.name}</Text>
+            {/* <Image source={itinerario.image} style={styles.image} /> */}
+          </View>
         </View>
-      </View>
-      <View style={styles.content}>
-        <View style={styles.progressIndicator}>
-          {contents.map((prop, key) => {
-            console.log(prop);
-            if (key === 0) {
-              return (
-                <MaterialIcons
-                  name="radio-button-checked"
-                  color={colors.AccentDark}
-                  size={26}
-                  key={key}
-                />
-              );
-            } else if (key > contents.length - 1) {
-              return null;
-            } else {
-              return page >= key ? (
-                <View style={styles.lineAndPoint} key={key}>
-                  <View style={styles.line}></View>
+        <View style={styles.content}>
+          <View style={styles.progressIndicator}>
+            {contents.map((prop, key) => {
+              if (key === 0) {
+                return (
                   <MaterialIcons
                     name="radio-button-checked"
                     color={colors.AccentDark}
                     size={26}
+                    key={key}
                   />
-                </View>
-              ) : (
-                <View style={styles.lineAndPoint} key={key}>
-                  <View style={styles.line}></View>
-                  <MaterialIcons
-                    name="radio-button-unchecked"
-                    color={colors.AccentLight}
-                    size={26}
-                  />
-                </View>
-              );
-            }
-          })}
-        </View>
-        <Text style={styles.textContent}>{contents[page].content}</Text>
+                );
+              } else if (key > contents.length - 1) {
+                return null;
+              } else {
+                return page >= key ? (
+                  <View style={styles.lineAndPoint} key={key}>
+                    <View style={styles.line}></View>
+                    <MaterialIcons
+                      name="radio-button-checked"
+                      color={colors.AccentDark}
+                      size={26}
+                    />
+                  </View>
+                ) : (
+                  <View style={styles.lineAndPoint} key={key}>
+                    <View style={styles.line}></View>
+                    <MaterialIcons
+                      name="radio-button-unchecked"
+                      color={colors.AccentLight}
+                      size={26}
+                    />
+                  </View>
+                );
+              }
+            })}
+          </View>
+          <ScrollView>
+            <Text style={styles.textContent}>{contents[page].content}</Text>
+          </ScrollView>
 
-        <TouchableHighlight
-          activeOpacity={0.6}
-          underlayColor="#1DB6B6"
-          style={styles.btnNext}
-          onPress={() => {
-            console.log(page);
-            if (page > 0) setPage((page) => page - 1);
-            // navigation.navigate('ItinerarioContent', { content });
-          }}
-        >
-          <Text style={styles.textBtnConintue}>BACK</Text>
-        </TouchableHighlight>
-        <TouchableHighlight
-          activeOpacity={0.6}
-          underlayColor="#1DB6B6"
-          style={styles.btnNext}
-          onPress={() => {
-            console.log(page);
-            if (page < contents.length - 1) setPage((page) => page + 1);
-            // navigation.navigate('ItinerarioContent', { content });
-          }}
-        >
-          <Text style={styles.textBtnConintue}>SIGUIENTE</Text>
-        </TouchableHighlight>
-      </View>
+          <View style={styles.btnsWrapper}>
+            {page === 0 ? (
+              <TouchableHighlight
+                activeOpacity={0.6}
+                underlayColor="#1DB6B6"
+                style={styles.btnNext}
+                onPress={() => {
+                  if (page < contents.length - 1) setPage((page) => page + 1);
+                  // navigation.navigate('ItinerarioContent', { content });
+                }}
+              >
+                <Text style={styles.textBtnConintue}>SIGUIENTE</Text>
+              </TouchableHighlight>
+            ) : null}
+
+            {page === contents.length - 1 ? (
+              <View style={styles.btnsWrapper}>
+                <TouchableHighlight
+                  activeOpacity={0.6}
+                  underlayColor="#1DB6B6"
+                  style={styles.btnNext}
+                  onPress={() => {
+                    if (page > 0) setPage((page) => page - 1);
+                    // navigation.navigate('ItinerarioContent', { content });
+                  }}
+                >
+                  <Text style={styles.textBtnConintue}>BACK</Text>
+                </TouchableHighlight>
+                <TouchableHighlight
+                  activeOpacity={0.6}
+                  underlayColor="#1DB6B6"
+                  style={styles.btnNext}
+                  onPress={() => {
+                    if (page < contents.length - 1) setPage((page) => page + 1);
+                    // navigation.navigate('ItinerarioContent', { content });
+                  }}
+                >
+                  <Text style={styles.textBtnConintue}>
+                    SIGUIENTE ITINERARIO
+                  </Text>
+                </TouchableHighlight>
+              </View>
+            ) : null}
+
+            {page !== contents.length - 1 && page !== 0 ? (
+              <View style={styles.btnsWrapper}>
+                <TouchableHighlight
+                  activeOpacity={0.6}
+                  underlayColor="#1DB6B6"
+                  style={styles.btnNext}
+                  onPress={() => {
+                    if (page > 0) setPage((page) => page - 1);
+                    // navigation.navigate('ItinerarioContent', { content });
+                  }}
+                >
+                  <Text style={styles.textBtnConintue}>BACK</Text>
+                </TouchableHighlight>
+
+                <TouchableHighlight
+                  activeOpacity={0.6}
+                  underlayColor="#1DB6B6"
+                  style={styles.btnNext}
+                  onPress={() => {
+                    if (page < contents.length - 1) setPage((page) => page + 1);
+                    // navigation.navigate('ItinerarioContent', { content });
+                  }}
+                >
+                  <Text style={styles.textBtnConintue}>SIGUIENTE</Text>
+                </TouchableHighlight>
+              </View>
+            ) : null}
+          </View>
+        </View>
+      </ImageBackground>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
+  main: {
+    flex: 1,
+  },
+  imgBack: {
+    backgroundColor: 'rgba(255,255,255,.1)',
+    flex: 1,
+  },
   btnBack: {
     borderRadius: 15,
     width: 26,
@@ -120,9 +180,6 @@ const styles = StyleSheet.create({
     position: 'absolute',
     zIndex: 1,
     elevation: 50,
-  },
-  main: {
-    flex: 1,
   },
   header: {
     flexDirection: 'column',
@@ -152,6 +209,7 @@ const styles = StyleSheet.create({
     color: colors.TextDark,
     fontSize: 26,
     marginBottom: 15,
+    alignSelf: 'center',
   },
   btnNext: {
     alignSelf: 'center',
@@ -199,7 +257,16 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     alignSelf: 'center',
   },
-  textContent: {},
+  textContent: {
+    marginHorizontal: 10,
+    marginVertical: 30,
+  },
+  btnsWrapper: {
+    flexDirection: 'row',
+    alignSelf: 'center',
+    // alignContent: 'flex-end',
+    // alignItems: 'flex-end',
+  },
 });
 
 export default ItinerarioContent;

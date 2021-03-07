@@ -6,13 +6,25 @@ const itinerariosData = [
     description:
       'En este itinerario vamos a descubrir cómo lidiar con actutides y pensamientos que pueden dificultar nuestra vida social. El estrés y la ansiedad son respuestas que podemos aprender a manejar. 1',
     contents: [
-      { id: '1', title: 'Identifica tu situación', content: 'content1' },
-      { id: '2', title: 'Registra tus emociones', content: 'content2' },
-      { id: '3', title: 'Pensamientos negativos', content: 'content3' },
+      {
+        id: '1',
+        title: 'Identifica tu situación',
+        content: `En esta sesión vamos a reflexionar sobre los pensamientos negativos.\nIdentificaremos tus dificultades en este ámbito y aprenderemos algunas habilidades que practicar y que nos serán de ayuda en el futuro.`,
+      },
+      {
+        id: '2',
+        title: 'Registra tus emociones',
+        content: `En esta sesión vamos a reflexionar sobre los pensamientos negativos.\nIdentificaremos tus dificultades en este ámbito y aprenderemos algunas habilidades que practicar y que nos serán de ayuda en el futuro.`,
+      },
+      {
+        id: '3',
+        title: 'Pensamientos negativos',
+        content: `En esta sesión vamos a reflexionar sobre los pensamientos negativos.\nIdentificaremos tus dificultades en este ámbito y aprenderemos algunas habilidades que practicar y que nos serán de ayuda en el futuro.`,
+      },
       {
         id: '4',
         title: 'Cómo continuar a partir de aquí',
-        content: 'content4',
+        content: `En esta sesión vamos a reflexionar sobre los pensamientos negativos.\nIdentificaremos tus dificultades en este ámbito y aprenderemos algunas habilidades que practicar y que nos serán de ayuda en el futuro.`,
       },
     ],
   },
@@ -23,13 +35,20 @@ const itinerariosData = [
     description:
       'En este itinerario vamos a descubrir cómo lidiar con actutides y pensamientos que pueden dificultar nuestra vida social. El estrés y la ansiedad son respuestas que podemos aprender a manejar. 2',
     contents: [
-      { id: '1', title: 'Identifica tu situación', content: 'content1' },
-      { id: '2', title: 'Registra tus emociones', content: 'content2' },
-      { id: '3', title: 'Pensamientos negativos', content: 'content3' },
       {
-        id: '4',
-        title: 'Cómo continuar a partir de aquí',
-        content: 'content4',
+        id: '1',
+        title: 'Identifica tu situación',
+        content: `En esta sesión vamos a reflexionar sobre los pensamientos negativos.\nIdentificaremos tus dificultades en este ámbito y aprenderemos algunas habilidades que practicar y que nos serán de ayuda en el futuro.`,
+      },
+      {
+        id: '2',
+        title: 'Registra tus emociones',
+        content: `En esta sesión vamos a reflexionar sobre los pensamientos negativos.\nIdentificaremos tus dificultades en este ámbito y aprenderemos algunas habilidades que practicar y que nos serán de ayuda en el futuro.`,
+      },
+      {
+        id: '3',
+        title: 'Pensamientos negativos',
+        content: `En esta sesión vamos a reflexionar sobre los pensamientos negativos.\nIdentificaremos tus dificultades en este ámbito y aprenderemos algunas habilidades que practicar y que nos serán de ayuda en el futuro.`,
       },
     ],
   },
@@ -40,13 +59,30 @@ const itinerariosData = [
     description:
       'En este itinerario vamos a descubrir cómo lidiar con actutides y pensamientos que pueden dificultar nuestra vida social. El estrés y la ansiedad son respuestas que podemos aprender a manejar. 3',
     contents: [
-      { id: '1', title: 'Identifica tu situación', content: 'content1' },
-      { id: '2', title: 'Registra tus emociones', content: 'content2' },
-      { id: '3', title: 'Pensamientos negativos', content: 'content3' },
+      {
+        id: '1',
+        title: 'Identifica tu situación',
+        content: `En esta sesión vamos a reflexionar sobre los pensamientos negativos.\nIdentificaremos tus dificultades en este ámbito y aprenderemos algunas habilidades que practicar y que nos serán de ayuda en el futuro.`,
+      },
+      {
+        id: '2',
+        title: 'Registra tus emociones',
+        content: `En esta sesión vamos a reflexionar sobre los pensamientos negativos.\nIdentificaremos tus dificultades en este ámbito y aprenderemos algunas habilidades que practicar y que nos serán de ayuda en el futuro.`,
+      },
+      {
+        id: '3',
+        title: 'Pensamientos negativos',
+        content: `En esta sesión vamos a reflexionar sobre los pensamientos negativos.\nIdentificaremos tus dificultades en este ámbito y aprenderemos algunas habilidades que practicar y que nos serán de ayuda en el futuro.`,
+      },
       {
         id: '4',
+        title: 'Texto texto',
+        content: `En esta sesión vamos a reflexionar sobre los pensamientos negativos.\nIdentificaremos tus dificultades en este ámbito y aprenderemos algunas habilidades que practicar y que nos serán de ayuda en el futuro.`,
+      },
+      {
+        id: '5',
         title: 'Cómo continuar a partir de aquí',
-        content: 'content4',
+        content: `En esta sesión vamos a reflexionar sobre los pensamientos negativos.\nIdentificaremos tus dificultades en este ámbito y aprenderemos algunas habilidades que practicar y que nos serán de ayuda en el futuro.`,
       },
     ],
   },
@@ -57,13 +93,25 @@ const itinerariosData = [
     description:
       'En este itinerario vamos a descubrir cómo lidiar con actutides y pensamientos que pueden dificultar nuestra vida social. El estrés y la ansiedad son respuestas que podemos aprender a manejar. 4',
     contents: [
-      { id: '1', title: 'Identifica tu situación', content: 'content1' },
-      { id: '2', title: 'Registra tus emociones', content: 'content2' },
-      { id: '3', title: 'Pensamientos negativos', content: 'content3' },
+      {
+        id: '1',
+        title: 'Identifica tu situación',
+        content: `En esta sesión vamos a reflexionar sobre los pensamientos negativos.\nIdentificaremos tus dificultades en este ámbito y aprenderemos algunas habilidades que practicar y que nos serán de ayuda en el futuro.`,
+      },
+      {
+        id: '2',
+        title: 'Registra tus emociones',
+        content: `En esta sesión vamos a reflexionar sobre los pensamientos negativos.\nIdentificaremos tus dificultades en este ámbito y aprenderemos algunas habilidades que practicar y que nos serán de ayuda en el futuro.`,
+      },
+      {
+        id: '3',
+        title: 'Pensamientos negativos',
+        content: `En esta sesión vamos a reflexionar sobre los pensamientos negativos.\nIdentificaremos tus dificultades en este ámbito y aprenderemos algunas habilidades que practicar y que nos serán de ayuda en el futuro.`,
+      },
       {
         id: '4',
         title: 'Cómo continuar a partir de aquí',
-        content: 'content4',
+        content: `En esta sesión vamos a reflexionar sobre los pensamientos negativos.\nIdentificaremos tus dificultades en este ámbito y aprenderemos algunas habilidades que practicar y que nos serán de ayuda en el futuro.`,
       },
     ],
   },

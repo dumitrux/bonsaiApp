@@ -12,8 +12,6 @@ import {
 import colors from '../assets/colors/colors';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
-import itinerariosEncursoData from '../assets/data/itinerariosEncursoData';
-import itinerariosRecomendadosData from '../assets/data/itinerariosRecomendadosData';
 import itinerariosData from '../assets/data/itinerariosData';
 import itinerariosCategoriasData from '../assets/data/itinerariosCategoriasData';
 import BoxEncurso from '../components/BoxEncurso';
@@ -35,10 +33,13 @@ const HomeItinerarios = ({ navigation }) => {
         <Text style={styles.textEncurso}>EN CURSO</Text>
         <View style={styles.enCursoList}>
           <FlatList
-            data={itinerariosEncursoData}
-            renderItem={({ item }) => (
-              <BoxEncurso item={item} navigation={navigation} />
-            )}
+            data={itinerariosData}
+            renderItem={({ item }) => {
+              // if (itinerariesInProgress.includes(item.id)) {
+              //   return <BoxEncurso item={item} navigation={navigation} />;
+              // }
+              return <BoxEncurso item={item} navigation={navigation} />;
+            }}
             keyExtractor={(item) => item.id}
             horizontal={true}
             showsHorizontalScrollIndicator={false}
